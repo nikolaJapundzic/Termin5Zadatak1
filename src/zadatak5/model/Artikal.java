@@ -28,7 +28,7 @@ public class Artikal {
     @DatabaseField(columnName = POLJE_CENA, canBeNull = false)
     private double cena;
 
-    @ForeignCollectionField(foreignFieldName = "stavke")
+    @ForeignCollectionField(foreignFieldName = "artikal")
     private ForeignCollection<Stavka> stavke;
 
     public Artikal(){

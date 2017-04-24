@@ -24,8 +24,8 @@ public class Racun {
     @DatabaseField(columnName = "datum", canBeNull = false)
     private Date datum;
 
-    @ForeignCollectionField(foreignFieldName = "stavke")
-    ForeignCollection<Stavka>stavke;
+    @ForeignCollectionField(foreignFieldName = "racun")
+    private ForeignCollection<Stavka> stavke;
 
     public Racun(){
 
