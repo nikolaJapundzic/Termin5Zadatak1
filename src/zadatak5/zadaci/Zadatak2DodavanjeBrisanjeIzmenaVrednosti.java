@@ -62,19 +62,61 @@ public class Zadatak2DodavanjeBrisanjeIzmenaVrednosti {
             stavkaDao.create(s2);
             Stavka s3 = new Stavka(3, r2, a3);
             stavkaDao.create(s3);
+            Stavka s4 = new Stavka(3, r2, a3);
+            stavkaDao.create(s3);
 
             //-------------------------------------------------
 
-
-            //-------------------------------------------------
-            Racun racunZaIzmenu = racunDao.queryForId(r1.getId());
-            racunZaIzmenu.setOznaka("Prvi racun");
-            racunDao.update(racunZaIzmenu);
+            System.out.println("-----------------");
 
             List<Racun> racuni = racunDao.queryForAll();
             for (Racun j : racuni)
                 System.out.println(j);
+
+            System.out.println("-----------------");
+
+
+
+
             //-------------------------------------------------
+
+            //     UPDATE
+            Racun racunZaIzmenu = racunDao.queryForId(r1.getId());
+            racunZaIzmenu.setOznaka("Prvi racun");
+            racunDao.update(racunZaIzmenu);
+
+            System.out.println("-----------------");
+
+            racuni = racunDao.queryForAll();
+            for (Racun j : racuni)
+                System.out.println(j);
+
+            System.out.println("-----------------");
+
+            //-------------------------------------------------
+            // DODAVANJE I BRISANJE JEDNOG OBJEKTA NAZVANOG VODA a5
+
+            Artikal a5 = new Artikal("Voda", "Flasa vode od 1,5L", 70);
+            artikalDao.create(a5);
+
+            System.out.println("-----------------");
+
+            List<Artikal>artikal = artikalDao.queryForAll();
+            for (Artikal j : artikal)
+                System.out.println(j);
+
+            System.out.println("-----------------");
+
+            Artikal jeloZaBrisanje = artikalDao.queryForId(a5.getId());
+            artikalDao.delete(jeloZaBrisanje);
+
+            System.out.println("-----------------");
+
+            artikal = artikalDao.queryForAll();
+            for (Artikal j : artikal)
+                System.out.println(j);
+
+            System.out.println("-----------------");
 
 
         }catch (Exception e) {

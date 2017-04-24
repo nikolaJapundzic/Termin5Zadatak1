@@ -23,7 +23,7 @@ public class Zadatak1KreiranjeTabela {
             TableUtils.dropTable(connectionSource, Stavka.class, true);
             TableUtils.dropTable(connectionSource, Artikal.class, true);
             TableUtils.dropTable(connectionSource, Racun.class, true);
-            System.out.println("bla");
+
             TableUtils.createTable(connectionSource, Artikal.class);
             TableUtils.createTable(connectionSource, Racun.class);
             TableUtils.createTable(connectionSource, Stavka.class);
